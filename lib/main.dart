@@ -63,7 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (BuildContext context,int index){
             return Container(
               child: Center(
-                child: Text(data[index]['id'].toString()),
+                child:data !=null ? ListTile(
+                  title: Text(data[index]['id'].toString()),
+                  subtitle: Text(data[index]['P_name'].toString()),
+                ):Text("data not found")
               ),
             );
           }
